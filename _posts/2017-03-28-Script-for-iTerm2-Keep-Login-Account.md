@@ -28,10 +28,10 @@ interact
 这里[lindex $argv 0]， [lindex $argv 1]， [lindex $argv 2]， [lindex $argv 3] 分别代表着4个参数。将这个文件 item2login.sh 复制到 /usr/local/bin 就可以了。 然后在iTerm2里面配置。
 
 如图1：
-![如图1]({{ site.BASE_PATH }}/assets/media/WX20170328-135505@2x.png)
+![如图1]({{ site.baseurl }}/assets/media/WX20170328-135505@2x.png)
 
 然后看一条具体的实例
-![如图1]({{ site.BASE_PATH }}/assets/media/WX20170328-135834@2x.png)
+![如图1]({{ site.baseurl }}/assets/media/WX20170328-135834@2x.png)
 
 {% highlight bash %}
 item2login.sh 22 xxxx 192.168.0.101 xxxxxx

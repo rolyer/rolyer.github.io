@@ -69,7 +69,7 @@ react-native run-android
 
 App运行成功截屏如下：
 
-![Welcome to React Native]({{ site.BASE_PATH }}/assets/media/Welcome-to-React-Native-Screenshots.jpg)
+![Welcome to React Native]({{ site.baseurl }}/assets/media/Welcome-to-React-Native-Screenshots.jpg)
 
 
 # 安卓调试

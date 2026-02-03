@@ -124,12 +124,12 @@ git clone url
 使用Jekyll的站点变量引用图片，确保路径正确：
 
 ```markdown
-![图片描述文字]({{ site.BASE_PATH }}/assets/media/图片文件名)
+![图片描述文字]({{ site.baseurl }}/assets/media/图片文件名)
 ```
 
 **示例**：
 ```markdown
-![Git Commands]({{ site.BASE_PATH }}/assets/media/git-commands-show.png)
+![Git Commands]({{ site.baseurl }}/assets/media/git-commands-show.png)
 ```
 
 **图片存储位置**：`assets/media/` 目录
@@ -332,7 +332,7 @@ $ git status
    - 选择正确的语言标识符
 
 3. **图片路径**
-   - 使用`{{ site.BASE_PATH }}`变量
+   - 使用`{{ site.baseurl }}`变量
    - 不要硬编码路径
    - 图片放在`assets/media/`目录
 
@@ -372,7 +372,7 @@ $ git status
 2. **不要硬编码图片路径**
    ```markdown
    ❌ ![img](/assets/media/image.png)
-   ✅ ![img]({{ site.BASE_PATH }}/assets/media/image.png)
+   ✅ ![img]({{ site.baseurl }}/assets/media/image.png)
    ```
 
 3. **不要忘记Front Matter**
