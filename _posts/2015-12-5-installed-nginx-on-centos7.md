@@ -22,11 +22,11 @@ $ yum install openssl openssl--devel
 
 安装之前，最好检查一下是否已经安装有nginx
 {% highlight bash %}
-$ find -name nginx
+find -name nginx
 {% endhighlight bash %}
 如果系统已经安装了nginx，那么就先卸载
 {% highlight bash %}
-$ yum remove nginx
+yum remove nginx
 {% endhighlight bash %}
 # 第一种方式：通过yum安装
 
@@ -159,14 +159,14 @@ chkconfig –level 35 iptables off
 
 {% highlight bash %}
 #首先进入/usr/local目录
-$   cd /usr/local
+cd /usr/local
 #从官网下载最新版的nginx
-$   wget -c http://nginx.org/download/nginx-1.11.13.tar.gz
+wget -c http://nginx.org/download/nginx-1.11.13.tar.gz
 #解压nginx压缩包
-$   tar -zxvf nginx-1.11.13.tar.gz
-$   cd  nginx-1.11.13
+tar -zxvf nginx-1.11.13.tar.gz
+cd  nginx-1.11.13
 # 接下来安装，使用--prefix参数指定nginx安装的目录,make、make install安装，默认安装在/usr/local/nginx，安装完毕后，进入安装后目录（/usr/local/nginx）便可以启动或停止它了。
-$   ./configure   
-$   make  
-$   make install
+./configure   
+make  
+make install
 {% endhighlight bash %}

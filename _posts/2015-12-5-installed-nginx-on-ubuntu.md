@@ -52,7 +52,7 @@ Nginx可以使用spwan-fcgi。在早期版本中需要安装lighttpd，但是在
 （1）使用apt-get在线安装命令如下：
 
 {% highlight bash %}
-$sudo apt-get install spawn-fcgi
+sudo apt-get install spawn-fcgi
 {% endhighlight bash %}
 
 （2）源代码安装如下，下载地址为：
@@ -60,9 +60,9 @@ http://www.lighttpd.net/download/spawn-fcgi-1.6.3.tar.gz
 解压缩以后，进入目录下执行如下安装命令：
 
 {% highlight bash %}
-$./configure
-$make
-$make install
+./configure
+make
+make install
 {% endhighlight bash %}
 
 安装之后，spawn-fcgi命令就可以直接使用了，它的可执行文件在/usr/local/bin/spawn-fcgi。
