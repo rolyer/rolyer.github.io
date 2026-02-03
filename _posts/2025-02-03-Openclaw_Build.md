@@ -56,17 +56,311 @@ nvm use 25
 {% endhighlight %}
 
 ### 4. 安装openclaw（官方脚本使用的是node 22，启用TG会报错）
+> 模型选择Qwen
+
 {% highlight bash %}
 curl -fsSL https://openclaw.ai/install.sh | bash
 
-# 以下在openclaw安装完成后执行
-## 加载环境变量
-source /root/.bashrc
-## 开发访问
-sed -i 's/loopback/lan/g' ~/.openclaw/openclaw.json
-## 拷贝长记忆
-cp openclaw-backup/202602022030/workspace/MEMORY.md ~/.openclaw/workspace/
+🦞 OpenClaw 2026.2.1 (ed4529e) — Shell yeah—I'm here to pinch the toil and leave you the glory.
+
+(node:4858) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+██░▄▄▄░██░▄▄░██░▄▄▄██░▀██░██░▄▄▀██░████░▄▄▀██░███░██
+██░███░██░▀▀░██░▄▄▄██░█░█░██░█████░████░▀▀░██░█░█░██
+██░▀▀▀░██░█████░▀▀▀██░██▄░██░▀▀▄██░▀▀░█░██░██▄▀▄▀▄██
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+                  🦞 OPENCLAW 🦞                    
+ 
+┌  OpenClaw onboarding
+│
+◇  Security ──────────────────────────────────────────────────────────────────────────────╮
+│                                                                                         │
+│  Security warning — please read.                                                        │
+│                                                                                         │
+│  OpenClaw is a hobby project and still in beta. Expect sharp edges.                     │
+│  This bot can read files and run actions if tools are enabled.                          │
+│  A bad prompt can trick it into doing unsafe things.                                    │
+│                                                                                         │
+│  If you’re not comfortable with basic security and access control, don’t run OpenClaw.  │
+│  Ask someone experienced to help before enabling tools or exposing it to the internet.  │
+│                                                                                         │
+│  Recommended baseline:                                                                  │
+│  - Pairing/allowlists + mention gating.                                                 │
+│  - Sandbox + least-privilege tools.                                                     │
+│  - Keep secrets out of the agent’s reachable filesystem.                                │
+│  - Use the strongest available model for any bot with tools or untrusted inboxes.       │
+│                                                                                         │
+│  Run regularly:                                                                         │
+│  openclaw security audit --deep                                                         │
+│  openclaw security audit --fix                                                          │
+│                                                                                         │
+│  Must read: https://docs.openclaw.ai/gateway/security                                   │
+│                                                                                         │
+├─────────────────────────────────────────────────────────────────────────────────────────╯
+│
+◇  I understand this is powerful and inherently risky. Continue?
+│  Yes
+│
+◇  Onboarding mode
+│  QuickStart
+│
+◇  QuickStart ─────────────────────────╮
+│                                      │
+│  Gateway port: 18789                 │
+│  Gateway bind: Loopback (127.0.0.1)  │
+│  Gateway auth: Token (default)       │
+│  Tailscale exposure: Off             │
+│  Direct to chat channels.            │
+│                                      │
+├──────────────────────────────────────╯
+│
+◇  Model/auth provider
+│  Qwen
+│
+◇  Qwen auth method
+│  Qwen OAuth
+│
+◑  Starting Qwen OAuth…│
+◇  Qwen OAuth ─────────────────────────────────────────────────────────────────────────╮
+│                                                                                      │
+│  Open https://chat.qwen.ai/authorize?user_code=HDFNX3UV&client=qwen-code to approve  │
+│  access.                                                                             │
+│  If prompted, enter the code HDFNX3UV.                                               │
+│                                                                                      │
+├──────────────────────────────────────────────────────────────────────────────────────╯
+◇  Qwen OAuth complete
+│
+◇  Model configured ─────────────────────────────╮
+│                                                │
+│  Default model set to qwen-portal/coder-model  │
+│                                                │
+├────────────────────────────────────────────────╯
+│
+◇  Provider notes ──────────────────────────────────────────────────────────────────────╮
+│                                                                                       │
+│  Qwen OAuth tokens auto-refresh. Re-run login if refresh fails or access is revoked.  │
+│  Base URL defaults to https://portal.qwen.ai/v1. Override                             │
+│  models.providers.qwen-portal.baseUrl if needed.                                      │
+│                                                                                       │
+├───────────────────────────────────────────────────────────────────────────────────────╯
+│
+◇  Default model
+│  Keep current (qwen-portal/coder-model)
+│
+◇  Channel status ────────────────────────────╮
+│                                             │
+│  Telegram: not configured                   │
+│  WhatsApp: not configured                   │
+│  Discord: not configured                    │
+│  Google Chat: not configured                │
+│  Slack: not configured                      │
+│  Signal: not configured                     │
+│  iMessage: not configured                   │
+│  Google Chat: install plugin to enable      │
+│  Nostr: install plugin to enable            │
+│  Microsoft Teams: install plugin to enable  │
+│  Mattermost: install plugin to enable       │
+│  Nextcloud Talk: install plugin to enable   │
+│  Matrix: install plugin to enable           │
+│  BlueBubbles: install plugin to enable      │
+│  LINE: install plugin to enable             │
+│  Zalo: install plugin to enable             │
+│  Zalo Personal: install plugin to enable    │
+│  Tlon: install plugin to enable             │
+│                                             │
+├─────────────────────────────────────────────╯
+│
+◇  How channels work ─────────────────────────────────────────────────────────────────────╮
+│                                                                                         │
+│  DM security: default is pairing; unknown DMs get a pairing code.                       │
+│  Approve with: openclaw pairing approve <channel> <code>                                │
+│  Public DMs require dmPolicy="open" + allowFrom=["*"].                                  │
+│  Multi-user DMs: set session.dmScope="per-channel-peer" (or "per-account-channel-peer"  │
+│  for multi-account channels) to isolate sessions.                                       │
+│  Docs: start/pairing                  │
+│                                                                                         │
+│  Telegram: simplest way to get started — register a bot with @BotFather and get going.  │
+│  WhatsApp: works with your own number; recommend a separate phone + eSIM.               │
+│  Discord: very well supported right now.                                                │
+│  Google Chat: Google Workspace Chat app with HTTP webhook.                              │
+│  Slack: supported (Socket Mode).                                                        │
+│  Signal: signal-cli linked device; more setup (David Reagans: "Hop on Discord.").       │
+│  iMessage: this is still a work in progress.                                            │
+│  Nostr: Decentralized protocol; encrypted DMs via NIP-04.                               │
+│  Microsoft Teams: Bot Framework; enterprise support.                                    │
+│  Mattermost: self-hosted Slack-style chat; install the plugin to enable.                │
+│  Nextcloud Talk: Self-hosted chat via Nextcloud Talk webhook bots.                      │
+│  Matrix: open protocol; install the plugin to enable.                                   │
+│  BlueBubbles: iMessage via the BlueBubbles mac app + REST API.                          │
+│  LINE: LINE Messaging API bot for Japan/Taiwan/Thailand markets.                        │
+│  Zalo: Vietnam-focused messaging platform with Bot API.                                 │
+│  Zalo Personal: Zalo personal account via QR code login.                                │
+│  Tlon: decentralized messaging on Urbit; install the plugin to enable.                  │
+│                                                                                         │
+├─────────────────────────────────────────────────────────────────────────────────────────╯
+│
+◇  Select channel (QuickStart)
+│  Telegram (Bot API)
+│
+◇  Telegram bot token ───────────────────────────────────────────────────────────────────╮
+│                                                                                        │
+│  1) Open Telegram and chat with @BotFather                                             │
+│  2) Run /newbot (or /mybots)                                                           │
+│  3) Copy the token (looks like 123456:ABC...)                                          │
+│  Tip: you can also set TELEGRAM_BOT_TOKEN in your env.                                 │
+│  Docs: https://docs.openclaw.ai/telegram  │
+│  Website: https://openclaw.ai                                                          │
+│                                                                                        │
+├────────────────────────────────────────────────────────────────────────────────────────╯
+│
+◇  Enter Telegram bot token
+│  xxxxxxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+│
+◇  Selected channels ──────────────────────────────────────────────────────────────────────╮
+│                                                                                          │
+│  Telegram — simplest way to get started — register a bot with @BotFather and get going.  │
+│  https://docs.openclaw.ai/channels/telegr  │
+│  am                                                                              │
+│  https://openclaw.ai                                                                     │
+│                                                                                          │
+├──────────────────────────────────────────────────────────────────────────────────────────╯
+Updated ~/.openclaw/openclaw.json
+Workspace OK: ~/.openclaw/workspace
+Sessions OK: ~/.openclaw/agents/main/sessions
+│
+◇  Skills status ────────────╮
+│                            │
+│  Eligible: 5               │
+│  Missing requirements: 44  │
+│  Blocked by allowlist: 0   │
+│                            │
+├────────────────────────────╯
+│
+◇  Configure skills now? (recommended)
+│  No
+│
+◇  Hooks ──────────────────────────────────────────────────────────╮
+│                                                                  │
+│  Hooks let you automate actions when agent commands are issued.  │
+│  Example: Save session context to memory when you issue /new.    │
+│                                                                  │
+│  Learn more: https://docs.openclaw.ai/hooks                      │
+│                                                                  │
+├──────────────────────────────────────────────────────────────────╯
+│
+◇  Enable hooks?
+│  Skip for now
+│
+◇  Systemd ───────────────────────────────────────────────────────────────────────────────╮
+│                                                                                         │
+│  Systemd user services are unavailable. Skipping lingering checks and service install.  │
+│                                                                                         │
+├─────────────────────────────────────────────────────────────────────────────────────────╯
+│
+◇  
+Health check failed: gateway closed (1006 abnormal closure (no close frame)): no close reason
+  Gateway target: ws://127.0.0.1:18789
+  Source: local loopback
+  Config: /root/.openclaw/openclaw.json
+  Bind: loopback
+│
+◇  Health check help ────────────────────────────────╮
+│                                                    │
+│  Docs:                                             │
+│  https://docs.openclaw.ai/gateway/health           │
+│  https://docs.openclaw.ai/gateway/troubleshooting  │
+│                                                    │
+├────────────────────────────────────────────────────╯
+Missing Control UI assets. Build them with `pnpm ui:build` (auto-installs UI deps).
+│
+◇  Optional apps ────────────────────────╮
+│                                        │
+│  Add nodes for extra features:         │
+│  - macOS app (system + notifications)  │
+│  - iOS app (camera/canvas)             │
+│  - Android app (camera/canvas)         │
+│                                        │
+├────────────────────────────────────────╯
+│
+◇  Control UI ───────────────────────────────────────────────────────────────────────────────╮
+│                                                                                            │
+│  Web UI: http://127.0.0.1:18789/                                                           │
+│  Web UI (with token):                                                                      │
+│  http://127.0.0.1:18789/?token=xxxxxxxxxxxxxxxxx            │
+│  Gateway WS: ws://127.0.0.1:18789                                                          │
+│  Gateway: not detected (gateway closed (1006 abnormal closure (no close frame)): no close  │
+│  reason)                                                                                   │
+│  Docs: https://docs.openclaw.ai/web/control-ui                                             │
+│                                                                                            │
+├────────────────────────────────────────────────────────────────────────────────────────────╯
+│
+◇  Workspace backup ────────────────────────────────────────╮
+│                                                           │
+│  Back up your agent workspace.                            │
+│  Docs: https://docs.openclaw.ai/concepts/agent-workspace  │
+│                                                           │
+├───────────────────────────────────────────────────────────╯
+│
+◇  Security ──────────────────────────────────────────────────────╮
+│                                                                 │
+│  Running agents on your computer is risky — harden your setup:  │
+│  https://docs.openclaw.ai/security                              │
+│                                                                 │
+├─────────────────────────────────────────────────────────────────╯
+│
+◇  Dashboard ready ────────────────────────────────────────────────────────────────╮
+│                                                                                  │
+│  Dashboard link (with token):                                                    │
+│  http://127.0.0.1:18789/?token=xxxxxxxxxxxxxxxxx  │
+│  Copy/paste this URL in a browser on this machine to control OpenClaw.           │
+│  No GUI detected. Open from your computer:                                       │
+│  ssh -N -L 18789:127.0.0.1:18789 root@10.96.125.246                              │
+│  Then open:                                                                      │
+│  http://localhost:18789/                                                         │
+│  http://localhost:18789/?token=xxxxxxxxxxxxxxxxx  │
+│  Docs:                                                                           │
+│  https://docs.openclaw.ai/gateway/remote                                         │
+│  https://docs.openclaw.ai/web/control-ui                                         │
+│                                                                                  │
+├──────────────────────────────────────────────────────────────────────────────────╯
+│
+◇  Web search (optional) ─────────────────────────────────────────────────────────────────╮
+│                                                                                         │
+│  If you want your agent to be able to search the web, you’ll need an API key.           │
+│                                                                                         │
+│  OpenClaw uses Brave Search for the `web_search` tool. Without a Brave Search API key,  │
+│  web search won’t work.                                                                 │
+│                                                                                         │
+│  Set it up interactively:                                                               │
+│  - Run: openclaw configure --section web                                                │
+│  - Enable web_search and paste your Brave Search API key                                │
+│                                                                                         │
+│  Alternative: set BRAVE_API_KEY in the Gateway environment (no config changes).         │
+│  Docs: https://docs.openclaw.ai/tools/web                                               │
+│                                                                                         │
+├─────────────────────────────────────────────────────────────────────────────────────────╯
+│
+◇  What now ─────────────────────────────────────────────────────────────╮
+│                                                                        │
+│  What now: https://openclaw.ai/showcase ("What People Are Building").  │
+│                                                                        │
+├────────────────────────────────────────────────────────────────────────╯
+│
+└  Onboarding complete. Use the tokenized dashboard link above to control OpenClaw.
+
+│
+◇  Install shell completion script?
+│  Yes
+Completion installed. Restart your shell or run: source /root/.bashrc
+
+
 {% endhighlight %}
+
+    > 以下在openclaw安装完成后执行,加载环境变量
+    {% highlight bash %}
+    source /root/.bashrc
+    {% endhighlight %}
 
 ### 5. 编写supervisor配置文件（解决容器中不支持systemd命令）
 {% highlight bash %}
@@ -99,7 +393,7 @@ ss -tulpn | grep :18789
 使用vim ~/.openclaw/openclaw.json找到TOKEN（节点位置：gateway->auth->token），再在浏览器中打开：
 
 {% highlight bash %}
-https://YOUR_URL/?token=92d833ea31f371debaeefa67c7acd15f48d3dd9f97e044bb
+https://YOUR_URL/?token=xxxxxxxxxxxxxxxxx
 {% endhighlight %}
 
 ### 9. 设备授权
