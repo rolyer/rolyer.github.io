@@ -1,6 +1,6 @@
 # visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
 # visit Font-Awesome(http://fortawesome.github.io/Font-Awesome/) for more icons
-
+github: [metadata]
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
