@@ -10,7 +10,7 @@ author:
 github: [metadata]
 paginate: 10
 paginate_path: "page:num"
-exclude: ["README.md", "vendor", "Gemfile", "Gemfile.lock", "_backup", "vendor"]
+exclude: ["README.md", "vendor", "Gemfile", "Gemfile.lock", "_backup", "vendor", "MARKDOWN_SYNTAX_GUIDE.md"]
 
 # 修正变量名：要么给它值，要么删掉。
 # 建议给一个默认值防止 Liquid 报错
