@@ -7,6 +7,7 @@ description: 本篇文章讲述Nginx的安装与配置，安装环境是Ubuntu�
 comments: true
 ---
 
+{% raw %}
 本篇文章讲述Nginx的安装与配置，安装环境是Ubuntu系统
 
 # 1.Niginx的介绍
@@ -45,7 +46,7 @@ Nginx 是一个很强大的高性能Web和反向代理服务器，它具有很�
 Nginx完全是轻量级的，必须借助第三方的FastCGI处理器才可以对PHP进行解析，因此其实这样看来Nginx是非常灵活的，它可以和任何第三方提供解析的处理器实现连接从而实现对PHP的解析(在nginx.conf中很容易设置)。
 
 Nginx可以使用spwan-fcgi。在早期版本中需要安装lighttpd，但是在9.10版本以后直接安装spawn-fcgi就可以。现在出现了新的第三方的PHP的FastCGI处理器，叫做PHP-FPM，可以了解一下。
-{% raw %}
+
 # 6.安装FastCGI基于spawn-fcgi
 
 /usr/bin/spawn-fcgi这个文件来管理 FastCGI，它原属于lighttpd这个包里面，但 9.10 后，spawn-fcgi被分离出来单独成包。
