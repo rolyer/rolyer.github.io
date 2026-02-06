@@ -79,7 +79,7 @@ comments: true
 **重要**：必须使用Jekyll的Liquid语法，而不是标准的Markdown代码块！
 
 ```liquid
-{% highlight 语言 %}
+{% highlight bash %}
 代码内容
 {% endhighlight %}
 ```
