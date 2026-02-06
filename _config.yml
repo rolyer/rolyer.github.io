@@ -6,10 +6,10 @@ paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
 plugins:
   - jekyll-paginate
-  - jekyll-gist
-  - jekyll-github-metadata
   - jekyll-seo-tag
-  - jekyll-relative-links
+  # - jekyll-gist
+  # - jekyll-github-metadata
+  # - jekyll-relative-links
 rouge: pygments
 markdown: kramdown
 disqus: rolyer
