@@ -10,7 +10,7 @@ author:
 github: [metadata]
 paginate: 10
 paginate_path: "page:num"
-exclude: ["README.md", "vendor", "Gemfile", "Gemfile.lock"]
+exclude: ["README.md", "vendor", "Gemfile", "Gemfile.lock", "_backup", "vendor"]
 
 # 修正变量名：要么给它值，要么删掉。
 # 建议给一个默认值防止 Liquid 报错
@@ -29,6 +29,7 @@ markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
+  syntax_highlighter: nil  # 暂时设置为 nil 看看能否跑通全站
 
 # 默认值
 defaults:
