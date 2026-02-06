@@ -37,9 +37,13 @@ source ~/.zshrc
 
 # timeout 120 bundle install || bundle install --retry 3
 bundle install
-bundle exec jekyll build --verbose
 
+# 本地构建
+bundle exec jekyll build --verbose
+# 本地构建 跟踪
 bundle exec jekyll build --trace
+# 本地预览
+bundle exec jekyll serve
 ```
 
 ### Download
