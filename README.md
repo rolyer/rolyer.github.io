@@ -18,6 +18,30 @@ Dbyll for Ghost is now available. Get it [here](https://github.com/dbtek/dbyll-g
 - Disqus comments.
 
 
+### EVN
+# 安装版本管理器
+brew install rbenv ruby-build
+rbenv install 3.1.4
+rbenv global 3.1.4
+
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+source ~/.zshrc
+
+### Build
+```shell
+
+
+# source 'https://rubygems.org'
+# source 'https://gems.ruby-china.com'
+
+# timeout 120 bundle install || bundle install --retry 3
+bundle install
+bundle exec jekyll build --verbose
+
+bundle exec jekyll build --trace
+```
+
 ### Download
 * [Download dbyll](https://github.com/dbtek/dbyll/archive/master.zip)
 
@@ -27,7 +51,6 @@ Dbyll for Ghost is now available. Get it [here](https://github.com/dbtek/dbyll-g
 
 ### License
 - [MIT](http://opensource.org/licenses/MIT)
-
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dbtek/dbyll/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
