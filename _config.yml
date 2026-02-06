@@ -1,41 +1,38 @@
-# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
-# visit Font-Awesome(http://fortawesome.github.io/Font-Awesome/) for more icons
-github: [metadata]
-paginate: 10 # pagination based on number of posts
-paginate_path: "page:num"
-exclude: ["README.md"] # files to exclude
-plugins:
-  - jekyll-paginate
-  - jekyll-seo-tag
-  # - jekyll-gist
-  # - jekyll-github-metadata
-  # - jekyll-relative-links
-rouge: pygments
-markdown: kramdown
-disqus: rolyer
-google_analytics:
-
-defaults:
-  -
-    scope:
-      path: "" # empty string for all files
-    values:
-      title: Blog
-
+# 基本配置
+title: Blog
 description: Stylish Jekyll Theme
 author:
   name: Rolyer Luo
-  email:
   github: rolyer
-  twitter: rolyer
-  pinterest: rolyer
-  linkedin: rolyer
-  weibo: rolyer
   bio: This's My Tech Blog!
-  email_md5: 1320f268fa9429e2cf2d62abc7f835e3
 
-rss_path: feed.xml
-categories_path: categories.html
-tags_path: tags.html
+# 核心构建配置
+github: [metadata]
+paginate: 10
+paginate_path: "page:num"
+exclude: ["README.md", "vendor", "Gemfile", "Gemfile.lock"]
 
-BASE_PATH:
+# 修正变量名：要么给它值，要么删掉。
+# 建议给一个默认值防止 Liquid 报错
+baseurl: "" 
+url: "https://rolyer.github.io"
+
+# 插件配置
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-gist
+
+# 语法高亮
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# 默认值
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: post # 确保所有博文默认都有 layout
